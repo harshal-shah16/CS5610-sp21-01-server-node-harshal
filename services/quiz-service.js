@@ -1,29 +1,57 @@
-const quizzes = require("./quizzes.json")
 
-//const quizzesModel = require("../../db/quizzes/quizzes-model")
+const quizzesDao = require('../daos/quizzes-dao')
+const findAllQuizzes = () => quizzesDao.findAllQuizzes()
+const findQuizById = (qid) => quizzesDao.findQuizById(qid)
+module.exports = { findAllQuizzes, findQuizById }
 
-const createQuiz = () => {}
-const findAllQuizzes = () => quizzes
-//{
- //   return quizzesModel.find()
-    // return quizzes
-//}
-const findQuizById = (qid) => {
-    return quizzes.find((quiz) => {
-        return (quiz._id === qid)
-    })
-}
 
-    // return quizzesModel
-    //     .findById(qid)
-    //     .populate("questions")
-    //     .exec()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const quizzes = require("./quizzes.json")
+
+// //const quizzesModel = require("../../db/quizzes/quizzes-model")
+
+// const createQuiz = () => {}
+// const findAllQuizzes = () => quizzes
+// //{
+//  //   return quizzesModel.find()
+//     // return quizzes
+// //}
+// const findQuizById = (qid) => {
+//     return quizzes.find((quiz) => {
+//         return (quiz._id === qid)
+//     })
+// }
+
+//     // return quizzesModel
+//     //     .findById(qid)
+//     //     .populate("questions")
+//     //     .exec()
     
-//const updateQuiz = () => {}
-//const deleteQuiz = () => {}
+// //const updateQuiz = () => {}
+// //const deleteQuiz = () => {}
 
-module.exports = {
-    //createQuiz,
-    findAllQuizzes, findQuizById,
-    //updateQuiz, deleteQuiz
-}
+// module.exports = {
+//     //createQuiz,
+//     findAllQuizzes, findQuizById,
+//     //updateQuiz, deleteQuiz
+// }

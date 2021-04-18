@@ -1,9 +1,14 @@
 const express = require('express')
 const app = express()
+//const QUIZZES_URL = process.env.MONGODB_URI
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
-// const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost:27017/whiteboard',
-//     {useNewUrlParser: true, useUnifiedTopology: true});
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://harshal:3mYGKXifs2DjecGJ@cluster0.y8ipz.mongodb.net/whiteboard?retryWrites=true&w=majority',
+     {useNewUrlParser: true, useUnifiedTopology: true}
+     );
 
 // configure CORS
 app.use(function (req, res, next) {
@@ -16,10 +21,8 @@ app.use(function (req, res, next) {
 });
 
 
-// const quizzesController = require("./controllers/quizzes-controller")
-// quizzesController(app)
-
 require("./controllers/quizzes-controller")(app)
 require("./controllers/question-controller")(app)
+require('./controllers/quiz-attempts-controller')(app)
 
 app.listen(5000)
