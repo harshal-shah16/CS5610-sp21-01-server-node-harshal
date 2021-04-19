@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const mongoose = require('mongoose');
-mongoose.connect(,
+mongoose.connect('mongodb+srv://harshal:3mYGKXifs2DjecGJ@cluster0.y8ipz.mongodb.net/whiteboard?retryWrites=true&w=majority',
      {useNewUrlParser: true, useUnifiedTopology: true}
      );
 
