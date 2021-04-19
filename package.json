@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harshal-shah16/CS5610-sp21-01-server-node-harshal.git"

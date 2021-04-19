@@ -1,12 +1,13 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
-//const QUIZZES_URL = process.env.MONGODB_URI
+const QUIZZES_URL = process.env.MONGODB_URI
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://harshal:3mYGKXifs2DjecGJ@cluster0.y8ipz.mongodb.net/whiteboard?retryWrites=true&w=majority',
+mongoose.connect(`${QUIZZES_URL}`,
      {useNewUrlParser: true, useUnifiedTopology: true}
      );
 
@@ -25,4 +26,4 @@ require("./controllers/quizzes-controller")(app)
 require("./controllers/question-controller")(app)
 require('./controllers/quiz-attempts-controller')(app)
 
-app.listen(5000)
+app.listen(process.env.PORT ||5000)
